@@ -1,6 +1,5 @@
 /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
 var prevScrollpos = window.pageYOffset;
-let navbar = document.getElementsByID("menu");
 
 window.onscroll = function() {
     var currentScrollPos = window.pageYOffset;
@@ -12,9 +11,3 @@ window.onscroll = function() {
 
         prevScrollpos = currentScrollPos;
 }
-
-navbar.addEventListener("mousedown", function( event ){
-   alert("hi");
-});
- 
-

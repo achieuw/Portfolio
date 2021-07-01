@@ -38,12 +38,6 @@ body{
     border: none;
     text-decoration: none;
 }
-#navbar #menu a.border{
-    color:#270e00;
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 95%, #965a00 100%);
-    border: none;
-    text-decoration: none;
-}
 .icons{
     position: sticky;
     margin-left: 83%;
