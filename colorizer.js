@@ -1,4 +1,5 @@
 let navbar = document.getElementById("navbar");
+const activate = false;
 const resetColor = true;
 
 // This handler will be executed only once when the cursor
@@ -18,6 +19,7 @@ navbar.addEventListener("mouseenter", function( event ) {
 navbar.addEventListener("mouseover", function( event ) {
     const randomColor = Math.floor(Math.random()*16777215).toString(16);
   // highlight the mouseover target
+  if(activate)
     event.target.style.color = "#" + randomColor;
 }, false);
 
