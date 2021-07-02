@@ -11,7 +11,7 @@ body{
 }
 #navbar{
     height: 60px;
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 90%, #000000 93%, #ffffff 95%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 93%, #000000 97%, #ffffff 100%);
     background-color: rgb(235, 235, 235);
     opacity: 95%;
     position: sticky;
@@ -28,13 +28,14 @@ body{
 }
 #navbar #menu a:hover{
     color:#270e00;
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 95%, #965a00 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 97%, #000000 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 97%, #000000 100%);
     border: none;
     text-decoration: none;
 }
 #navbar #menu a:active{
     color:#270e00;
-    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 95%, #965a00 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 97%, #000000 100%);
     border: none;
     text-decoration: none;
 }
