@@ -2,10 +2,10 @@ const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 const iconSpan = document.querySelector(".icons");
 
-const stringToType = ["Hi, I'm.","I'm a", "This is my work."];
-const typingDelay = 75;
-const erasing_delay = 40;
-const newTextDelay = 1300;
+const stringToType = ["Hi, I'm", "I'm a", "This is my work"];
+const typingDelay = 5;
+const erasing_delay = 10;
+const newTextDelay = 100;
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -26,7 +26,7 @@ function type()
     else
     {
         cursorSpan.classList.remove("typing");
-        if(textArrayIndex == 1){
+        if(textArrayIndex == 2){
             playAnimation();
             setTimeout(erase, newTextDelay * 2);
         }
