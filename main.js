@@ -1,17 +1,20 @@
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 const iconSpan = document.querySelector(".icons");
+const containerSpan = document.querySelector(".container h2");
+const containerSpanh3 = document.querySelector(".container h3");
 
 const stringToType = ["Hi, I'm", "I'm a", "This is my work"];
-const typingDelay = 5;
-const erasing_delay = 10;
-const newTextDelay = 100;
+const typingDelay = 100;
+const erasing_delay = 50;
+const newTextDelay = 1400;
 let textArrayIndex = 0;
 let charIndex = 0;
+introduction = true;
 
 function type() 
 {
-    if(charIndex < stringToType[textArrayIndex].length)
+    if(charIndex < stringToType[textArrayIndex].length && introduction)
     { 
         if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
         typedTextSpan.textContent += stringToType[textArrayIndex].charAt(charIndex);       
@@ -23,12 +26,21 @@ function type()
         else
             setTimeout(type, typingDelay);          
     }    
-    else
+    else if(introduction)
     {
         cursorSpan.classList.remove("typing");
-        if(textArrayIndex == 2){
-            playAnimation();
+        if(textArrayIndex == 0){
+            fadeIn();
+            setTimeout(erase, newTextDelay);
+        }       
+        else if (textArrayIndex == 1){
+            fadeInh3();
+            setTimeout(erase, newTextDelay);
+        }         
+        else if(textArrayIndex == 2){
+            playAnimation("animateIcons");
             setTimeout(erase, newTextDelay * 2);
+            introduction = false;
         }
         else{
             setTimeout(erase, newTextDelay);
@@ -40,10 +52,18 @@ function erase()
 {
     if(charIndex > 0)
     {
+        
         if(!cursorSpan.classList.contains('typing')) cursorSpan.classList.add('typing');
         typedTextSpan.textContent = stringToType[textArrayIndex].substring(0, charIndex - 1);
         charIndex--;
-        setTimeout(erase, erasing_delay);
+        if(charIndex == stringToType[textArrayIndex].length - 1){
+            setTimeout(erase, erasing_delay * 8);
+        }   
+        else
+            setTimeout(erase, erasing_delay)
+        
+            
+            
     }
     else if (textArrayIndex >= stringToType.length - 1){
         cursorSpan.classList.add('disable')
@@ -64,8 +84,14 @@ document.addEventListener("DOMContentLoaded", function(){
     setTimeout(type, newTextDelay);
 });
 
-function playAnimation(){
-    if(!iconSpan.classList.contains("moveToNavbar")) iconSpan.classList.add("moveToNavbar");
+function playAnimation(className){
+    if(!iconSpan.classList.contains(className)) iconSpan.classList.add(className);
+}
+function fadeIn(){
+    if(!containerSpan.classList.contains("fade-In")) containerSpan.classList.add("fade-In");
+}
+function fadeInh3(){
+    if(!containerSpanh3.classList.contains("fade-In")) containerSpanh3.classList.add("fade-In");
 }
 
 
